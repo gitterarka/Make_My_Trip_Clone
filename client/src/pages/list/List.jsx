@@ -2,49 +2,27 @@ import "./list.css";
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import { useLocation } from "react-router-dom";
-import { useState} from "react";
+import { useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../../components/searchItem/SearchItem";
-import useFetch from "../../hooks/useFetch.js"
+import useFetch from "../../hooks/useFetch.js";
 
 const List = () => {
   const location = useLocation();
-  // fallback in case location.state is null or undefined
-//   const initialState = location.state || {
-//     destination: "",
-//     date: [
-//       {
-//         startDate: new Date(),
-//         endDate: new Date(),
-//         key: "selection",
-//       },
-//     ],
-//     options: {
-//       adult: 1,
-//       children: 0,
-//       room: 1,
-//     },
-//   };
 
-  const [destination, setDestination] = useState(location.state.destination);
-  const [dates, setDates] = useState(location.state.dates);
+  const [destination, setDestination] = useState(location.state?.destination || "");
+  const [dates, setDates] = useState(location.state?.dates || []);
   const [openDate, setOpenDate] = useState(false);
-  const [options, setOptions] = useState(location.state.options);
+  const [options, setOptions] = useState(location.state?.options || {});
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
 
-  const {data, loading, error, reFetch} = useFetch(`/hotels?city=${destination}&min=${min || 0 }&max=${max || 999}`);
+  const { data, loading } = useFetch(`/hotels?city=${destination}&min=${min || 0 }&max=${max || 999}`);
 
   const handleClick = () => {
-    reFetch();
+    // If needed, you can call reFetch() to refresh data
   };
-
-//   useEffect(() => {
-//     if (!location.state) {
-//       console.warn("No navigation state passed. Using default search values.");
-//     }
-//   }, [location.state]);
 
   return (
     <div>
@@ -57,16 +35,17 @@ const List = () => {
             <div className="lsItem">
               <label>Destination</label>
               <input
-                placeholder={destination} type="text"
-                //onChange={(e) => setDestination(e.target.value)}
+                placeholder={destination}
+                type="text"
+                onChange={(e) => setDestination(e.target.value)} // Enable destination change
               />
             </div>
             <div className="lsItem">
               <label>Check-in Date</label>
               <span onClick={() => setOpenDate(!openDate)}>{`${format(
-                dates[0].startDate,
+                dates[0]?.startDate,
                 "MM/dd/yyyy"
-              )} to ${format(dates[0].endDate, "MM/dd/yyyy")}`}</span>
+              )} to ${format(dates[0]?.endDate, "MM/dd/yyyy")}`}</span>
               {openDate && (
                 <DateRange
                   onChange={(item) => setDates([item.selection])}
@@ -83,14 +62,9 @@ const List = () => {
                     Min price <small>per night</small>
                   </span>
                   <input
-                    type="number" onChange={(e) =>setMin(e.target.value)}
+                    type="number"
+                    onChange={(e) => setMin(e.target.value)} // Enable min price change
                     className="lsOptionInput"
-                    // onChange={(e) =>
-                    //   setOptions((prev) => ({
-                    //     ...prev,
-                    //     minPrice: Number(e.target.value),
-                    //   }))
-                    // }
                   />
                 </div>
                 <div className="lsOptionItem">
@@ -98,14 +72,9 @@ const List = () => {
                     Max price <small>per night</small>
                   </span>
                   <input
-                    type="number" onChange={(e) =>setMax(e.target.value)}
+                    type="number"
+                    onChange={(e) => setMax(e.target.value)} // Enable max price change
                     className="lsOptionInput"
-                    // onChange={(e) =>
-                    //   setOptions((prev) => ({
-                    //     ...prev,
-                    //     maxPrice: Number(e.target.value),
-                    //   }))
-                    // }
                   />
                 </div>
                 <div className="lsOptionItem">
@@ -115,12 +84,12 @@ const List = () => {
                     min={1}
                     className="lsOptionInput"
                     placeholder={options.adult}
-                    // onChange={(e) =>
-                    //   setOptions((prev) => ({
-                    //     ...prev,
-                    //     adult: Number(e.target.value),
-                    //   }))
-                    // }
+                    onChange={(e) =>
+                      setOptions((prev) => ({
+                        ...prev,
+                        adult: Number(e.target.value),
+                      }))
+                    }
                   />
                 </div>
                 <div className="lsOptionItem">
@@ -130,12 +99,12 @@ const List = () => {
                     min={0}
                     className="lsOptionInput"
                     placeholder={options.children}
-                    // onChange={(e) =>
-                    //   setOptions((prev) => ({
-                    //     ...prev,
-                    //     children: Number(e.target.value),
-                    //   }))
-                    // }
+                    onChange={(e) =>
+                      setOptions((prev) => ({
+                        ...prev,
+                        children: Number(e.target.value),
+                      }))
+                    }
                   />
                 </div>
                 <div className="lsOptionItem">
@@ -145,12 +114,12 @@ const List = () => {
                     min={1}
                     className="lsOptionInput"
                     placeholder={options.room}
-                    // onChange={(e) =>
-                    //   setOptions((prev) => ({
-                    //     ...prev,
-                    //     room: Number(e.target.value),
-                    //   }))
-                    // }
+                    onChange={(e) =>
+                      setOptions((prev) => ({
+                        ...prev,
+                        room: Number(e.target.value),
+                      }))
+                    }
                   />
                 </div>
               </div>
@@ -158,11 +127,7 @@ const List = () => {
             <button onClick={handleClick}>Search</button>
           </div>
           <div className="listResult">
-            {loading ? "loading" : <>
-            {data.map(item=>(
-               <SearchItem item={item} key={item._id}/> 
-            ))}
-            </>}
+            {loading ? "loading" : <>{data.map((item) => <SearchItem item={item} key={item._id} />)}</>}
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaPlaneArrival } from "react-icons/fa6";
+import { FaPlaneArrival } from "react-icons/fa";
 import axios from "axios";
 import "./flightAdmin.css";
 

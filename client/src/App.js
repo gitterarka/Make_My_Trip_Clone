@@ -7,7 +7,8 @@ import Home from './pages/home/Home';
 import List from './pages/list/List';
 import Hotel from './pages/hotel/Hotel';
 import Login from './pages/login/Login';
-//import Flight from './pages/flight/Flight';
+import Flight from './pages/flight/Flight';
+import FlightAdmin from "./pages/flight/FlightAdmin.jsx";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
       <Route path="/hotels" element={<List/>}/> 
       <Route path="/hotels/:id" element={<Hotel/>}/>
       <Route path="/login" element={<Login/>}/>
-      {/* <Route path="/flight" element={<Flight/>}/> */}
+      <Route path="/flight" element={<Flight/>}/>
+      <Route path="/flights" element={<FlightAdmin />} />
     </Routes>
   </BrowserRouter>
   );

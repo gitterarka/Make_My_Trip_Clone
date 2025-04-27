@@ -1,0 +1,99 @@
+/* Flights Page Styling */
+.flights {
+  background-color: #f4f4f4;
+}
+
+.flightsContainer {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.flightsTitle {
+  text-align: center;
+  font-size: 29px;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.flightsDesc {
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 57px;
+}
+
+.flightsContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.flightsImg {
+  width: 450px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0, 113, 194, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.flightsImg:hover {
+  transform: scale(1.05);
+}
+
+.flightsText {
+  max-width: 500px;
+  padding: 20px;
+}
+
+.flightsSubtitle {
+  font-size: 22px;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.flightsText ul {
+  list-style: none;
+  padding: 0;
+}
+
+.flightsText li {
+  margin-bottom: 12px;
+  color: #0071c2;
+  line-height: 1.6;
+}
+
+.flightsHighlight {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.flightsHighlight h3 {
+  font-size: 22px;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.flightsButton {
+  background: linear-gradient(45deg, #0071c2, #005fa3);
+  color: white;
+  font-size: 15px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.flightsButton:hover {
+  background: linear-gradient(45deg, #005fa3, #0071c2);
+  transform: scale(1.1);
+}
+
+.flightsButton:focus {
+  outline: none;
+}

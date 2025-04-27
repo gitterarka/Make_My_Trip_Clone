@@ -1,10 +1,8 @@
 import {
   faBed,
   faCalendarDays,
-  faCar,
   faPerson,
   faPlane,
-  faTaxi,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./header.css";
@@ -12,9 +10,7 @@ import { DateRange } from "react-date-range";
 import { useContext, useState } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
-//import { format } from "date-fns";
 import { format } from "date-fns";
-
 import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext.js";
@@ -48,51 +44,47 @@ const Header = ({ type }) => {
     });
   };
 
-  const {dispatch} = useContext(SearchContext)
+  const { dispatch } = useContext(SearchContext);
 
   const handleSearch = () => {
-    dispatch({type:"NEW_SEARCH", payload:{ destination, dates, options} })
+    dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
     navigate("/hotels", { state: { destination, dates, options } });
+  };
+
+  const handleHeaderItemClick = (path) => {
+    navigate(path);
+  };
+
+  const handleLoginRegisterClick = () => {
+    navigate("/login");
   };
 
   return (
     <div className="header">
       <div
-        className={
-          type === "list" ? "headerContainer listMode" : "headerContainer"
-        }
+        className={type === "list" ? "headerContainer listMode" : "headerContainer"}
       >
         <div className="headerList">
           <div className="headerListItem active">
             <FontAwesomeIcon icon={faBed} />
             <span>Stays</span>
           </div>
-          <div className="headerListItem">
+          <div className="headerListItem" onClick={() => handleHeaderItemClick("/flight")}>
             <FontAwesomeIcon icon={faPlane} />
             <span>Flights</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faCar} />
-            <span>Car rentals</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faBed} />
-            <span>Attractions</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faTaxi} />
-            <span>Airport taxis</span>
           </div>
         </div>
         {type !== "list" && (
           <>
-            <h1 className="headerTitle">
-            Discover More with Moetours.
-            </h1>
+            <h1 className="headerTitle">Discover More with Moetours.</h1>
             <p className="headerDesc">
-            Travel smarter, laugh louder, and save bigger! Join Moetours for free and score 10%+ off right away—because your next adventure deserves a sweet deal!
+              Travel smarter, laugh louder, and save bigger! Join Moetours for free and score 10%+ off right away—because your next adventure deserves a sweet deal!
             </p>
-            {!user && <button className="headerBtn">Sign in / Register</button>}
+            {!user && (
+              <button className="headerBtn" onClick={handleLoginRegisterClick}>
+                Sign in / Register
+              </button>
+            )}
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />

@@ -46,5 +46,5 @@
       "last 1 safari version"
     ]
   },
-  proxy:"https://moetours.onrender.com"
+  "proxy": "https://moetours.onrender.com"
 }

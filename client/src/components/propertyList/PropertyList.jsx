@@ -2,8 +2,8 @@ import "./propertyList.css";
 import useFetch from "../../hooks/useFetch";
 
 const PropertyList = () => {
-  const { data, loading, error } = useFetch("/hotels/countByType");
-  
+  const { data, loading } = useFetch("/hotels/countByType");
+
   const images = [
     "https://theimperialindia.com/wp-content/uploads/2023/09/Luxury-Suite-lamp-1024x682.jpg",
     "https://images.hindustantimes.com/rf/image_size_640x362/HT/p2/2017/09/18/Pictures/_b95ae4a2-9c70-11e7-9c3b-8e901839ece0.jpg",
@@ -11,6 +11,7 @@ const PropertyList = () => {
     "https://oimages.elitehavens.com/images/gallery/lowres/P00530/Listing.jpg",
     "https://www.visitmysmokies.com/wp-content/uploads/2019/12/09122019110535_thumb.JPG"
   ];
+
   return (
     <div className="pList">
       {loading ? (
@@ -18,7 +19,7 @@ const PropertyList = () => {
       ) : (
         <>
           {data &&
-            images.map((img,i) => (
+            images.map((img, i) => (
               <div className="pListItem" key={i}>
                 <img
                   src={img}

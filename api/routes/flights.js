@@ -1,48 +1,40 @@
-// import express from "express";
-// import Flight from "../models/Flight.js";
-// // import {
-// //   createFlight,
-// //   deleteFlight,
-// //   getFlight,
-// //   getFlights,
-// //   updateFlight,
-// //   updateRoomAvailability,
-// // } from "../controllers/flight.js";
-// // import { verifyAdmin } from "../utils/verifyToken.js";
+import express from "express";
+import {
+  createFlight,
+  updateFlight,
+  deleteFlight,
+  getFlight,
+  getFlights,
+  countByCity,
+  countByAirline,
+  countByPlaces
+} from "../controllers/flight.js";
+import { verifyUser, verifyAdmin } from "../utils/verifyToken.js";
 
-// const router = express.Router();
-// //CREATE
-// router.post("/", async (req,res) => {
+const router = express.Router();
 
-//     const newFlight = new Flight(req.body)
-//     try{
-//         const savedFlight = await newFlight.save()
-//         res.status(200).json(savedFlight)
-//     }catch(err){
-//         res.status(500).json(err)
-//     }
+// CREATE
+router.post("/", verifyAdmin, createFlight);
 
-// })
-// router.put("/:id", async (req, res) => {
-//     try {
-//       const updatedFlight = await Flight.findByIdAndUpdate(
-//         req.params.id,
-//         { $set: req.body },
-//         { new: true }
-//       );
-//       res.status(200).json(updatedFlight);
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   });
-// // router.put("/:id", verifyAdmin, updateRoom);
-// // //DELETE
-// // router.delete("/:id/:hotelid", verifyAdmin, deleteRoom);
-// // //GET
+// UPDATE
+router.put("/:id", verifyAdmin, updateFlight);
 
-// // router.get("/:id", getRoom);
-// // //GET ALL
+// DELETE
+router.delete("/:id", verifyAdmin, deleteFlight);
 
-// // router.get("/", getRooms);
+// GET ONE
+router.get("/find/:id", verifyUser, getFlight);
 
-// export default router;
+// GET ALL
+router.get("/", verifyUser, getFlights);
+
+// COUNT BY CITY
+router.get("/countByCity", countByCity);
+
+// COUNT BY AIRLINE
+router.get("/countByAirline", countByAirline);
+// COUNT BY PLACE (Destination)
+router.get("/countByPlaces", countByPlaces);
+
+
+export default router;

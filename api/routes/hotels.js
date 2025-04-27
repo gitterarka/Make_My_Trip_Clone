@@ -1,7 +1,7 @@
 import express from "express";
 import Hotel from "../models/Hotel.js";
-import hotel from '../Controllers/hotel.js';
-import { countByCity, countByType, createHotel, deleteHotel, getHotel, getHotels, updateHotel, getHotelRooms,} from "../Controllers/hotel.js";
+import hotel from '../controllers/hotel.js';
+import { countByCity, countByType, createHotel, deleteHotel, getHotel, getHotels, updateHotel, getHotelRooms,} from "../controllers/hotel.js";
 import {verifyAdmin} from "../utils/verifyToken.js"
 
 const router = express.Router();

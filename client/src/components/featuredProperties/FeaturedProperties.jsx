@@ -2,7 +2,7 @@ import "./featuredProperties.css";
 import useFetch from "../../hooks/useFetch";
 
 const FeaturedProperties = () => {
-  const { data, loading, error } = useFetch("/hotels?featured=true&limit=4");
+  const { data, loading } = useFetch("/hotels?featured=true&limit=4");
 
   const images = [
     "https://images.trvl-media.com/lodging/1000000/80000/75800/75755/038fdf7d.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill",

@@ -7,6 +7,7 @@ import { AuthContext } from "./context/AuthContext";
 import { userColumns } from "./datatablesource";
 import { hotelColumns } from "./datatablesource";
 import { roomColumns } from "./datatablesource";
+import { flightColumns } from "./datatablesource";
 
 function App() {
 
@@ -37,6 +38,10 @@ function App() {
             <Route path="rooms">
               <Route index element={<List columns={roomColumns}/>} />
               <Route path=":roomId" element={<ProtectedRoute></ProtectedRoute>} />
+            </Route>
+            <Route path="flights">
+              <Route index element={<List columns={flightColumns}/>} />
+              <Route path=":flightId" element={<ProtectedRoute></ProtectedRoute>} />
             </Route>
           </Route>
         </Routes>

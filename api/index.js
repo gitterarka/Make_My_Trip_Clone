@@ -28,11 +28,7 @@ mongoose.connection.on("disconnected", () => {
 // Middlewares
 
 // ✅ Correct CORS setup
-app.use(cors({
-    origin: "https://make-my-trip-clone-ub1r.onrender.com", // your frontend domain
-    credentials: true,
-}));
-
+app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 

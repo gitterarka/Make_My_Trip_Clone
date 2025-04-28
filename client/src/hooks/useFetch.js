@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const BASE_URL = "https://make-my-trip-api.onrender.com";
+
 const useFetch = (url) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -10,7 +12,7 @@ const useFetch = (url) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(url, { withCredentials: true });
+        const res = await axios.get(BASE_URL + url, { withCredentials: true });
         setData(res.data);
       } catch (err) {
         setError(err);
@@ -23,7 +25,7 @@ const useFetch = (url) => {
   const reFetch = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(url, { withCredentials: true });
+      const res = await axios.get(BASE_URL + url, { withCredentials: true });
       setData(res.data);
     } catch (err) {
       setError(err);

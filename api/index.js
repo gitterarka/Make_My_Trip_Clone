@@ -26,8 +26,6 @@ mongoose.connection.on("disconnected", () => {
 });
 
 // Middlewares
-
-// ✅ Correct CORS setup
 app.use(cors());
 app.use(cookieParser());
 app.use(express.json());

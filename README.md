@@ -8,8 +8,9 @@ A full-featured hotel and flight reservation system built with the MERN stack (M
 ## UI Preview
 
 ![image](https://github.com/user-attachments/assets/5e883b13-eab6-41ed-88a6-335209c3a936)
-![image](https://github.com/user-attachments/assets/cee11df3-71c2-454f-8ab9-ebc51ebc8f90)
-![image](https://github.com/user-attachments/assets/73671c74-d096-43af-908c-d23287896c2e)
+![image](https://github.com/user-attachments/assets/1d9d3130-a2a8-4811-8573-0ecb2dfe43eb)
+![image](https://github.com/user-attachments/assets/6953951a-34f2-4ad8-b521-a2f78623b49b)
+
 
 
   

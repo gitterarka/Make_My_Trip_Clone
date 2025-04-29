@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Client Functionality - MakeMyTrip Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the user-facing part of the **MERN Stack Hotel & Flight Reservation System**, where users can search for hotels in specific cities, view room availability, and complete reservations by selecting dates and room numbers.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Client Access Flow
 
-### `npm start`
+1. **User Login/Register:**
+   - Users can sign up or log in via the authentication system.
+   - JWT token is generated and stored (e.g., via cookies/localStorage).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Search & View Hotels:**
+   - Users can search for hotels based on **city names**.
+   - Filter options such as date, price, or type may be available.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. **Select Room and Date:**
+   - After selecting a hotel, users can:
+     - View available **room types**
+     - Choose **check-in and check-out dates** using the **React Calendar**
+     - Select **available room numbers**
 
-### `npm test`
+4. **Reserve Hotel:**
+   - Once room and dates are selected, clicking the **Reserve** button confirms the booking.
+   - Booking data is stored in MongoDB.
+   - User is shown a confirmation of the reservation.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ✅ Features for Users
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Secure login using JWT
+- Browse hotels by city
+- Select check-in/check-out dates via date picker
+- Choose available rooms
+- Book reservations instantly
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📸 Client UI Screenshots
+![image](https://github.com/user-attachments/assets/70030b87-7c32-4270-a58a-c70ae2e73018)
+![image](https://github.com/user-attachments/assets/ce918eac-d1bf-4c27-ab63-1543fe78b341)
+![image](https://github.com/user-attachments/assets/3ef51cfc-3016-40ba-a709-733ce46ed45a)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Technologies Used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **React** with React Router
+- **Context API** for global state management
+- **Axios** for communicating with backend APIs
+- **React Calendar** for date selection
+- **JWT Auth** for user sessions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

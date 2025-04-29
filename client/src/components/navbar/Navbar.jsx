@@ -9,11 +9,11 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
-    navigate("/login"); // Redirect to the login page
+    navigate("/login"); 
   };
 
   const handleRegisterClick = () => {
-    navigate("/login"); // Redirect to the login page for registration (if using a shared login page)
+    navigate("/login");
   };
 
   return (
@@ -25,7 +25,7 @@ const Navbar = () => {
         </Link>
 
         {user ? (
-          <span>Welcome, {user.username}</span> // Or any other user information you'd like to show
+          <span>Welcome, {user.username}</span>
         ) : (
           <div className="navItems">
             <button className="navButton" onClick={handleRegisterClick}>

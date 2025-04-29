@@ -1,50 +1,13 @@
-// import { useEffect, useState } from "react";
-// import axios from "axios";
-
-// const useFetch = (url) => {
-//   const [data, setData] = useState([]);
-//   const [loading, setLoading] = useState(false);
-//   const [error, setError] = useState(false);
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       setLoading(true);
-//       try {
-//         const res = await axios.get(url);
-//         setData(res.data);
-//       } catch (err) {
-//         setError(err);
-//       }
-//       setLoading(false);
-//     };
-//     fetchData();
-//   }, [url]);
-
-//   const reFetch = async () => {
-//     setLoading(true);
-//     try {
-//       const res = await axios.get(url);
-//       setData(res.data);
-//     } catch (err) {
-//       setError(err);
-//     }
-//     setLoading(false);
-//   };
-
-//   return { data, loading, error, reFetch };
-// };
-
-// export default useFetch;
 import { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import { AuthContext } from "../context/AuthContext"; // adjust path as needed
+import { AuthContext } from "../context/AuthContext";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  const { user } = useContext(AuthContext); // 👈 get the token from context
+  const { user } = useContext(AuthContext); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,7 +15,7 @@ const useFetch = (url) => {
       try {
         const res = await axios.get(url, {
           headers: {
-            Authorization: `Bearer ${user?.token}`, // 👈 add the token here
+            Authorization: `Bearer ${user?.token}`, //token added
           },
         });
         setData(res.data);

@@ -60,4 +60,20 @@ React Auth Context API (Login Handling)
 - **Backend**: Node.js
 - **Database**: MongoDB (Mongoose)
 - **Authentication**: JWT (JSON Web Tokens)
+
 - **Other Tools**: Postman, Dotenv, Bcrypt.
+
+## MongoDB and Postman UI Preview
+
+![image](https://github.com/user-attachments/assets/cbe809c4-7828-4abe-a04f-260210e6abe4)
+![WhatsApp Image 2025-04-29 at 20 25 22_b996bb60](https://github.com/user-attachments/assets/90593d50-5502-4e9d-9658-36a994438287)
+
+
+---
+
+##  Data & Operations
+
+- ✅ **MongoDB** used as the database to store all data related to users, hotels, rooms, and flights.
+- ✅ Full **CRUD operations** (Create, Read, Update, Delete) were implemented and **tested via Postman**.
+- ✅ Secure and scalable backend with **JWT-based authentication** and **role-based access**.
+- ✅ All RESTful API endpoints were tested using Postman.

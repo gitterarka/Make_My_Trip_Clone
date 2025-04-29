@@ -28,7 +28,8 @@ This is the admin dashboard for the MakeMyTrip MERN Stack Booking System. The ad
 
 ![image](https://github.com/user-attachments/assets/354a2b93-08ec-4ecb-a5db-f925987e5fa7)
 ![image](https://github.com/user-attachments/assets/cdb7d2a4-ffbd-41c2-af1a-31b871734e2e)
-![image](https://github.com/user-attachments/assets/886d95e1-4244-4031-8248-5bb43c6dd28e)
+![image](https://github.com/user-attachments/assets/a0da197e-432f-4b35-8819-18acd4b50020)
+
 
 
 ---

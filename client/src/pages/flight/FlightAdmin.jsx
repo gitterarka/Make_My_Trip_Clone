@@ -92,7 +92,7 @@ const FlightAdmin = () => {
                 <input
                   type={field === "price" || field === "seatsAvailable" ? "number" : "text"}
                   name={field}
-                  placeholder={`Eg : ${field.charAt(0).toUpperCase() + field.slice(1)}`} // Placeholder text for user input
+                  placeholder={`Eg : ${field.charAt(0).toUpperCase() + field.slice(1)}`} 
                   value={newFlight[field]}
                   onChange={handleChange}
                 />
@@ -109,7 +109,7 @@ const FlightAdmin = () => {
         {flights.map((flight) => (
           <div key={flight._id} className="flightItem">
             <div>
-              <p><strong>{flight.flightNumber}</strong> - {flight.from} ➡️ {flight.to}</p>
+              <p><strong>{flight.flightNumber}</strong> - {flight.from} -> {flight.to}</p>
               <p>Airline: {flight.airline}, Price: ₹{flight.price}, Seats: {flight.seatsAvailable}</p>
               <p>Status: {flight.status}</p>
             </div>

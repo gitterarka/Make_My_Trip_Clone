@@ -1,15 +1,12 @@
-/* Global Horizontal Scrollbar Removal */
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Only hides horizontal scrollbar */
+    overflow-x: hidden; 
   }
   
   * {
     box-sizing: border-box;
   }
-  
-  /* Hotel Page Styles */
   .hotelContainer {
     display: flex;
     flex-direction: column;
@@ -131,18 +128,17 @@ body {
     cursor: pointer;
     border-radius: 5px;
   }
-  /* Global Horizontal Scrollbar Removal */
+  
   body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Only hides horizontal scrollbar */
+    overflow-x: hidden; 
   }
   
   * {
     box-sizing: border-box;
   }
   
-  /* Hotel Page Styles */
   .hotelContainer {
     display: flex;
     flex-direction: column;

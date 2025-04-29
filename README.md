@@ -1,7 +1,7 @@
-# Make_My_Trip_Clone --- MoeTours
+# MakeMyTrip Clone - MERN Stack Booking/Reservation System
+
 ## Live Demo
 Check out the deployed project here: [MakeMyTrip Clone](https://make-my-trip-clone-ub1r.onrender.com)
-# MakeMyTrip Clone - MERN Stack Booking/Reservation System
 
 A full-featured hotel and flight reservation system built with the MERN stack (MongoDB, Express, React, Node.js). This is a **MakeMyTrip clone** where users can search, book, and manage hotels and flights. It includes both frontend and backend, supporting **CRUD operations** for Flights, Hotels, Rooms, and Users via Postman.
 

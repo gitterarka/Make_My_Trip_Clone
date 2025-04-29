@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
-  const { data } = useFetch(`/hotels/room/${hotelId}`); // Removed loading and error
+  const { data } = useFetch(`/hotels/room/${hotelId}`);
   const { dates } = useContext(SearchContext);
 
   const getDatesInRange = (startDate, endDate) => {

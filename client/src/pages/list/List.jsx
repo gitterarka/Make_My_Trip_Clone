@@ -20,9 +20,7 @@ const List = () => {
 
   const { data, loading } = useFetch(`/hotels?city=${destination}&min=${min || 0 }&max=${max || 999}`);
 
-  const handleClick = () => {
-    // If needed, you can call reFetch() to refresh data
-  };
+  const handleClick = () => {};
 
   return (
     <div>
@@ -37,7 +35,7 @@ const List = () => {
               <input
                 placeholder={destination}
                 type="text"
-                onChange={(e) => setDestination(e.target.value)} // Enable destination change
+                onChange={(e) => setDestination(e.target.value)} 
               />
             </div>
             <div className="lsItem">
@@ -63,7 +61,7 @@ const List = () => {
                   </span>
                   <input
                     type="number"
-                    onChange={(e) => setMin(e.target.value)} // Enable min price change
+                    onChange={(e) => setMin(e.target.value)}
                     className="lsOptionInput"
                   />
                 </div>
@@ -73,7 +71,7 @@ const List = () => {
                   </span>
                   <input
                     type="number"
-                    onChange={(e) => setMax(e.target.value)} // Enable max price change
+                    onChange={(e) => setMax(e.target.value)}
                     className="lsOptionInput"
                   />
                 </div>

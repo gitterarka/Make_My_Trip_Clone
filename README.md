@@ -29,7 +29,30 @@ A full-featured hotel and flight reservation system built with the MERN stack (M
 - Integrated **React Calendar** for booking dates
 - REST API tested via **Postman**
 - Responsive and user-friendly interface
+- 
+## Key Functionalities & Operations Implemented
+This project covers a wide range of backend and frontend concepts with practical implementations:
 
+# Backend (Node.js + MongoDB)
+- MongoDB Connection & CRUD Operations
+- API Creation with Node.js
+- Express Middleware & Error Handling
+- JWT-based Authentication (Login/Register)
+- JWT Role-Based Authorization
+- Cookie-based Auth Token Storage
+- Mongoose Model Relations & Document Counting
+
+# Custom Middleware for Authentication
+# Organized Folder Structure for Models, Routes, and Controllers
+
+## Frontend (React)
+React App Setup & Context API Integration
+React Fetch with Backend APIs
+Custom Hook for Data Fetching
+React Calendar Integration
+Hotel & Admin Reservation Components
+URL Location-Based Data Fetch
+React Auth Context API (Login Handling)
 
 ##  Tech Stack
 
@@ -37,4 +60,4 @@ A full-featured hotel and flight reservation system built with the MERN stack (M
 - **Backend**: Node.js
 - **Database**: MongoDB (Mongoose)
 - **Authentication**: JWT (JSON Web Tokens)
-- **Other Tools**: Postman, Dotenv, Bcrypt, Multer (optional for image upload)
+- **Other Tools**: Postman, Dotenv, Bcrypt.

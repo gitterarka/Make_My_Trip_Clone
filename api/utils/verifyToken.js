@@ -1,7 +1,6 @@
 import jwt from "jsonwebtoken";
 import { createError } from "../utils/error.js";
 
-// Modified to accept callback
 export const verifyToken = (req, res, next, nextCallback) => {
   const token = req.cookies.access_token;
   if (!token) {
@@ -21,7 +20,7 @@ export const verifyToken = (req, res, next, nextCallback) => {
   });
 };
 
-// ✅ Verifies user or admin
+// Verifies user or admin
 export const verifyUser = (req, res, next) => {
   verifyToken(req, res, next, () => {
     if (req.user.id === req.params.id || req.user.isAdmin) {
@@ -32,7 +31,7 @@ export const verifyUser = (req, res, next) => {
   });
 };
 
-// ✅ Only admins allowed
+// Only admins allowed
 export const verifyAdmin = (req, res, next) => {
   verifyToken(req, res, next, () => {
     if (req.user.isAdmin) {
